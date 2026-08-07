@@ -3,7 +3,7 @@
 ### A free-resources-only guide for students starting their coding journey
 
 > Compiled by Shamique Khan | Last updated: August 2026
-> Built on top of [Free AI & ML Courses with Certificates](https://github.com/shamiquekhan/Free-Cources/blob/main/FREE_AI_ML_Courses_With_Certificates.md) and [Harvard CS50 Free Courses Guide](https://github.com/shamiquekhan/Free-Cources/blob/main/Harvard-CS50-Free-Courses-Guide.md), cross-checked against current course catalogs.
+> Built on top of [Free AI & ML Courses with Certificates](https://github.com/shamiquekhan/Learning-Atlas/blob/main/Free%20Courses/FREE_AI_ML_Courses_With_Certificates.md) and [Harvard CS50 Free Courses Guide](https://github.com/shamiquekhan/Learning-Atlas/blob/main/Free%20Courses/Harvard-CS50-Free-Courses-Guide.md), cross-checked against current course catalogs.
 >
 > Goal: Take you from "never written a line of code" to "AI/ML Engineer who can build, deploy, and explain real systems" — using 100% free resources, with honest notes on what's actually worth your time.
 
