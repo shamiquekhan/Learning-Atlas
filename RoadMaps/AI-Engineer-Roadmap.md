@@ -1,81 +1,100 @@
-## AI Engineer Roadmap
+# AI Engineer Roadmap
 
-«From Software Engineering → Machine Learning → LLMs → AI Systems → Production
+> From **Software Engineering → Machine Learning → LLMs → AI Systems → Production**
 
-A practical, engineering-first roadmap for becoming an AI Engineer capable of designing, building, evaluating, deploying, optimizing, and operating real AI systems.»
+A practical, engineering-first roadmap for becoming an **AI Engineer** capable of designing, building, evaluating, deploying, optimizing, and operating real AI systems.
 
-Repository: "Learning-Atlas" (https://github.com/shamiquekhan/Learning-Atlas)
-Recommended path: Foundations → ML → Deep Learning → LLMs → Retrieval → Agents → Evaluation → Inference → Production → Optimization → Advanced AI Systems
+> **Repository:** [Learning-Atlas](https://github.com/shamiquekhan/Learning-Atlas)
+>
+> **Recommended path:** Foundations → ML → Deep Learning → LLMs → Retrieval → Agents → Evaluation → Inference → Production → Optimization → Advanced AI Systems
 
----
-
-What Is an AI Engineer?
-
-An AI Engineer is not simply someone who knows how to call an LLM API.
-
-Modern AI engineering sits at the intersection of:
-
-Software Engineering
-        +
-Machine Learning
-        +
-Deep Learning
-        +
-LLM / Foundation Models
-        +
-Data Engineering
-        +
-Systems Engineering
-        +
-Inference / Optimization
-        +
-Cloud / Infrastructure
-        +
-Evaluation / Observability
-
-The job is to turn models into reliable, measurable, cost-effective software systems.
-
-A useful mental model is:
-
-        ┌──────────────────────┐
-        │       Product        │
-        └──────────┬───────────┘
-                   │
-        ┌──────────▼───────────┐
-        │    AI Application    │
-        └──────────┬───────────┘
-                   │
-      ┌────────────▼────────────┐
-      │   Agents / RAG / Tools   │
-      └────────────┬────────────┘
-                   │
-        ┌──────────▼───────────┐
-        │   Model / Inference  │
-        └──────────┬───────────┘
-                   │
-      ┌────────────▼────────────┐
-      │ GPU / Runtime / Serving │
-      └────────────┬────────────┘
-                   │
-        ┌──────────▼───────────┐
-        │ Infrastructure / OS  │
-        └──────────────────────┘
-
-You should eventually understand every layer well enough to debug the layer below the one you normally work in.
+[![Repository](https://img.shields.io/badge/repository-Learning--Atlas-181717?logo=github)](https://github.com/shamiquekhan/Learning-Atlas)
 
 ---
 
-0. The AI Engineer Mindset
+## Table of Contents
+
+- [0. The AI Engineer Mindset](#0-the-ai-engineer-mindset)
+- [1. Programming Foundations](#1-programming-foundations)
+- [2. Computer Science Fundamentals](#2-computer-science-fundamentals)
+- [3. Linux](#3-linux)
+- [4. Git and Software Development](#4-git-and-software-development)
+- [5. SQL and Data Engineering](#5-sql-and-data-engineering)
+- [6. Mathematics for AI](#6-mathematics-for-ai)
+- [7. Classical Machine Learning](#7-classical-machine-learning)
+- [8. Deep Learning](#8-deep-learning)
+- [9. GPU and ML Systems Fundamentals](#9-gpu-and-ml-systems-fundamentals)
+- [10. Transformers](#10-transformers)
+- [11. LLM Fundamentals](#11-llm-fundamentals)
+- [12. Prompt Engineering](#12-prompt-engineering)
+- [13. Context Engineering](#13-context-engineering)
+- [14. Embeddings](#14-embeddings)
+- [15. RAG](#15-rag)
+- [16. Vector Databases](#16-vector-databases)
+- [17. Tool Calling](#17-tool-calling)
+- [18. AI Agents](#18-ai-agents)
+- [19. MCP](#19-mcp)
+- [20. Agent Security](#20-agent-security)
+- [21. Evaluation Engineering](#21-evaluation-engineering)
+- [22. LLM Observability](#22-llm-observability)
+- [23. AI Cost Engineering](#23-ai-cost-engineering)
+- [24. Model Routing](#24-model-routing)
+- [25. Fine-Tuning](#25-fine-tuning)
+- [26. Preference Optimization](#26-preference-optimization)
+- [27. Quantization](#27-quantization)
+- [28. Inference Engineering](#28-inference-engineering)
+- [29. Model Serving](#29-model-serving)
+- [30. vLLM](#30-vllm)
+- [31. NVIDIA Triton](#31-nvidia-triton)
+- [32. Distributed Inference](#32-distributed-inference)
+- [33. Distributed Training](#33-distributed-training)
+- [34. MLOps](#34-mlops)
+- [35. Docker](#35-docker)
+- [36. Kubernetes](#36-kubernetes)
+- [37. Cloud Infrastructure](#37-cloud-infrastructure)
+- [38. CI/CD for AI](#38-cicd-for-ai)
+- [39. Production Architecture](#39-production-architecture)
+- [40. Reliability Engineering](#40-reliability-engineering)
+- [41. AI Safety and Security](#41-ai-safety-and-security)
+- [42. Multimodal AI](#42-multimodal-ai)
+- [43. AI Research Literacy](#43-ai-research-literacy)
+- [44. System Design for AI](#44-system-design-for-ai)
+- [45. Performance Engineering](#45-performance-engineering)
+- [46. AI Caching](#46-ai-caching)
+- [47. Asynchronous AI Systems](#47-asynchronous-ai-systems)
+- [48. Data and Model Versioning](#48-data-and-model-versioning)
+- [49. AI Product Engineering](#49-ai-product-engineering)
+- [50. Advanced AI Systems](#50-advanced-ai-systems)
+- [51. Recommended Tool Stack](#51-recommended-tool-stack)
+- [52. Projects — Beginner](#52-projects-beginner)
+- [53. Projects — Intermediate](#53-projects-intermediate)
+- [54. Projects — Advanced](#54-projects-advanced)
+- [55. Project 8 — Model Router](#55-project-8-model-router)
+- [56. Project 9 — AI Evaluation Platform](#56-project-9-ai-evaluation-platform)
+- [57. Project 10 — Production AI Platform](#57-project-10-production-ai-platform)
+- [58. The Portfolio Standard](#58-the-portfolio-standard)
+- [59. AI Engineer Competency Matrix](#59-ai-engineer-competency-matrix)
+- [60. Self-Assessment Checklist](#60-self-assessment-checklist)
+- [61. The Learning Order](#61-the-learning-order)
+- [62. The 70/20/10 Rule](#62-the-702010-rule)
+- [63. What NOT To Do](#63-what-not-to-do)
+- [64. The Depth Test](#64-the-depth-test)
+- [65. The AI Engineer Stack](#65-the-ai-engineer-stack)
+- [66. Final Definition](#66-final-definition)
+
+---
+
+## 0. The AI Engineer Mindset
 
 Before technologies, develop the correct engineering instincts.
 
 Stop thinking:
 
-«"Which framework should I use?"»
+> "Which framework should I use?"
 
 Start thinking:
 
-«"What problem am I solving, what are the constraints, and what is the simplest system that satisfies them?"»
+> "What problem am I solving, what are the constraints, and what is the simplest system that satisfies them?"
 
 For every AI system, ask:
 
@@ -96,13 +115,13 @@ For every AI system, ask:
 
 ---
 
-1. Programming Foundations
+## 1. Programming Foundations
 
-Goal
+### Goal
 
 Become a software engineer who happens to specialize in AI.
 
-Python
+### Python
 
 Learn:
 
@@ -125,7 +144,7 @@ Learn:
 - Profiling
 - Testing
 
-Python ecosystem
+### Python ecosystem
 
 Learn:
 
@@ -139,7 +158,7 @@ Learn:
 - "asyncio"
 - "typing"
 
-Engineering practices
+### Engineering practices
 
 Learn:
 
@@ -154,7 +173,7 @@ Learn:
 - Unit tests
 - Integration tests
 
-Project
+### Project
 
 Build:
 
@@ -173,13 +192,13 @@ Requirements:
 
 ---
 
-2. Computer Science Fundamentals
+## 2. Computer Science Fundamentals
 
 AI engineers eventually hit systems problems.
 
 You do not need to become a theoretical computer scientist, but you need strong engineering fundamentals.
 
-Data Structures
+### Data Structures
 
 Learn:
 
@@ -193,7 +212,7 @@ Learn:
 - Graphs
 - Tries
 
-Algorithms
+### Algorithms
 
 Learn:
 
@@ -205,19 +224,21 @@ Learn:
 - Recursion
 - Backtracking
 
-Complexity
+### Complexity
 
 Understand:
 
+```text
 O(1)
 O(log n)
 O(n)
 O(n log n)
 O(n²)
+```
 
 More importantly, understand why complexity matters in production systems.
 
-Operating Systems
+### Operating Systems
 
 Learn:
 
@@ -232,7 +253,7 @@ Learn:
 - Signals
 - Networking basics
 
-Networking
+### Networking
 
 Learn:
 
@@ -248,30 +269,83 @@ Learn:
 
 ---
 
-3. Linux
+## 3. Linux
 
 AI infrastructure overwhelmingly runs on Linux.
 
 Learn:
 
+```bash
 ssh
+```
+
+```bash
 curl
+```
+
+```bash
 wget
+```
+
+```bash
 grep
+```
+
+```bash
 sed
+```
+
+```bash
 awk
+```
+
+```bash
 find
+```
+
+```bash
 xargs
+```
+
+```bash
 top
+```
+
+```bash
 htop
+```
+
+```bash
 ps
+```
+
+```bash
 kill
+```
+
+```bash
 systemctl
+```
+
+```bash
 journalctl
+```
+
+```bash
 df
+```
+
+```bash
 du
+```
+
+```bash
 free
+```
+
+```bash
 nvidia-smi
+```
 
 Understand:
 
@@ -285,7 +359,7 @@ Understand:
 - shell scripting
 - package management
 
-GPU Linux
+### GPU Linux
 
 Learn:
 
@@ -298,17 +372,25 @@ Learn:
 
 You should be able to answer:
 
-«Why is my GPU at 20% utilization while inference is slow?»
+> "Why is my GPU at 20% utilization while inference is slow?"
 
 ---
 
-4. Git and Software Development
+## 4. Git and Software Development
 
 Learn Git beyond:
 
+```bash
 git add .
+```
+
+```bash
 git commit
+```
+
+```bash
 git push
+```
 
 Understand:
 
@@ -349,13 +431,13 @@ documentation
 
 ---
 
-5. SQL and Data Engineering
+## 5. SQL and Data Engineering
 
 AI systems are data systems.
 
 Learn SQL deeply.
 
-SQL
+### SQL
 
 Learn:
 
@@ -371,7 +453,7 @@ Learn:
 - normalization
 - denormalization
 
-Databases
+### Databases
 
 Understand:
 
@@ -380,11 +462,12 @@ Understand:
 - object storage
 - NoSQL basics
 
-Data pipelines
+### Data pipelines
 
 Learn:
 
 Extract
+```text
    ↓
 Validate
    ↓
@@ -395,6 +478,7 @@ Store
 Version
    ↓
 Serve
+```
 
 Understand:
 
@@ -408,13 +492,13 @@ Understand:
 
 ---
 
-6. Mathematics for AI
+## 6. Mathematics for AI
 
 Do not spend years proving mathematics before building.
 
 Learn mathematics as required to understand models.
 
-Linear Algebra
+### Linear Algebra
 
 Master:
 
@@ -429,7 +513,7 @@ Master:
 - projections
 - SVD
 
-Calculus
+### Calculus
 
 Learn:
 
@@ -440,7 +524,7 @@ Learn:
 - Jacobians
 - optimization
 
-Probability
+### Probability
 
 Learn:
 
@@ -453,7 +537,7 @@ Learn:
 - likelihood
 - maximum likelihood
 
-Statistics
+### Statistics
 
 Learn:
 
@@ -464,7 +548,7 @@ Learn:
 - correlation
 - bias/variance
 
-Optimization
+### Optimization
 
 Learn:
 
@@ -479,13 +563,13 @@ Learn:
 
 ---
 
-7. Classical Machine Learning
+## 7. Classical Machine Learning
 
 Before becoming an LLM application developer, understand machine learning.
 
 Learn:
 
-Supervised learning
+### Supervised learning
 
 - Linear regression
 - Logistic regression
@@ -495,14 +579,14 @@ Supervised learning
 - XGBoost
 - LightGBM
 
-Unsupervised learning
+### Unsupervised learning
 
 - K-means
 - PCA
 - clustering
 - dimensionality reduction
 
-ML fundamentals
+### ML fundamentals
 
 Understand:
 
@@ -516,9 +600,9 @@ Understand:
 - underfitting
 - regularization
 
-Metrics
+### Metrics
 
-Classification:
+### Classification
 
 - accuracy
 - precision
@@ -527,14 +611,14 @@ Classification:
 - ROC-AUC
 - PR-AUC
 
-Regression:
+### Regression
 
 - MAE
 - MSE
 - RMSE
 - R²
 
-Ranking/retrieval:
+### Ranking/retrieval
 
 - Precision@K
 - Recall@K
@@ -543,13 +627,13 @@ Ranking/retrieval:
 
 ---
 
-8. Deep Learning
+## 8. Deep Learning
 
 Learn PyTorch.
 
 Do not remain dependent on high-level abstractions.
 
-PyTorch fundamentals
+### PyTorch fundamentals
 
 Learn:
 
@@ -564,7 +648,7 @@ Learn:
 - mixed precision
 - distributed training basics
 
-Neural architectures
+### Neural architectures
 
 Understand:
 
@@ -576,15 +660,16 @@ Understand:
 - attention
 - Transformers
 
-Training
+### Training
 
 Understand:
 
-Dataset
+**Dataset**
+```text
    ↓
 DataLoader
    ↓
-Model
+**Model**
    ↓
 Forward pass
    ↓
@@ -595,12 +680,13 @@ Backward pass
 Optimizer
    ↓
 Update weights
+```
 
 Be able to explain every step.
 
 ---
 
-9. GPU and ML Systems Fundamentals
+## 9. GPU and ML Systems Fundamentals
 
 This is where an AI engineer starts separating from a notebook-only ML practitioner.
 
@@ -649,15 +735,16 @@ Learn tools such as:
 
 ---
 
-10. Transformers
+## 10. Transformers
 
 Transformers are mandatory for modern AI engineering.
 
 Understand:
 
-Architecture
+### Architecture
 
 Tokens
+```text
   ↓
 Embeddings
   ↓
@@ -672,6 +759,7 @@ Residual + Normalization
 Repeated Blocks
   ↓
 Output
+```
 
 Understand:
 
@@ -689,7 +777,7 @@ Understand:
 
 ---
 
-11. LLM Fundamentals
+## 11. LLM Fundamentals
 
 Understand what actually happens when an LLM generates a token.
 
@@ -712,7 +800,8 @@ Learn:
 
 Understand:
 
-Prompt
+**Prompt**
+```text
  ↓
 Tokenization
  ↓
@@ -727,8 +816,9 @@ Sampling
 Next token
  ↓
 Repeat
+```
 
-Important concepts
+### Important concepts
 
 Learn:
 
@@ -743,7 +833,7 @@ Learn:
 
 ---
 
-12. Prompt Engineering
+## 12. Prompt Engineering
 
 Prompt engineering is useful.
 
@@ -763,15 +853,15 @@ Learn:
 
 But move quickly from:
 
-«"How do I write a better prompt?"»
+> "How do I write a better prompt?"
 
 to:
 
-«"How do I build a system that remains reliable when prompts, users and models change?"»
+> "How do I build a system that remains reliable when prompts, users and models change?"
 
 ---
 
-13. Context Engineering
+## 13. Context Engineering
 
 Modern AI systems are increasingly constrained by the quality and management of context.
 
@@ -793,16 +883,18 @@ Think of context as a finite engineering resource.
 More context ≠ automatically better
 
 Useful context
+```text
        ↓
 Relevant context
        ↓
 Well-structured context
        ↓
 Better model performance
+```
 
 ---
 
-14. Embeddings
+## 14. Embeddings
 
 Understand embeddings rather than treating them as magic vectors.
 
@@ -821,7 +913,7 @@ Understand when embeddings fail.
 
 ---
 
-15. RAG
+## 15. RAG
 
 RAG should be learned as a retrieval system, not as:
 
@@ -830,6 +922,7 @@ vectorstore.similarity_search()
 Pipeline
 
 Documents
+```text
    ↓
 Parsing
    ↓
@@ -852,10 +945,11 @@ Context construction
 LLM
    ↓
 Answer
+```
 
 Learn:
 
-Ingestion
+### Ingestion
 
 - document parsing
 - chunking
@@ -863,7 +957,7 @@ Ingestion
 - deduplication
 - document versioning
 
-Retrieval
+### Retrieval
 
 - dense retrieval
 - sparse retrieval
@@ -871,7 +965,7 @@ Retrieval
 - hybrid retrieval
 - metadata filtering
 
-Advanced retrieval
+### Advanced retrieval
 
 - reranking
 - query expansion
@@ -880,7 +974,7 @@ Advanced retrieval
 - contextual retrieval
 - graph-based retrieval
 
-RAG evaluation
+### RAG evaluation
 
 Measure:
 
@@ -893,7 +987,7 @@ Measure:
 
 ---
 
-16. Vector Databases
+## 16. Vector Databases
 
 Understand the underlying concepts before learning vendors.
 
@@ -923,13 +1017,14 @@ Understand the indexing problem.
 
 ---
 
-17. Tool Calling
+## 17. Tool Calling
 
 Learn how models interact with external systems.
 
 Understand:
 
 User
+```text
  ↓
 LLM
  ↓
@@ -944,6 +1039,7 @@ Tool result
 LLM
  ↓
 Final response
+```
 
 Learn:
 
@@ -958,7 +1054,7 @@ Learn:
 
 ---
 
-18. AI Agents
+## 18. AI Agents
 
 An agent is more than:
 
@@ -978,9 +1074,11 @@ Understand:
 - human approval
 - failure recovery
 
-Agent loop
+### Agent loop
 
-Goal
+### Goal
+
+```text
  ↓
 Reason / Plan
  ↓
@@ -993,6 +1091,7 @@ Observe
 Update State
  ↓
 Continue / Finish
+```
 
 Learn agent architectures:
 
@@ -1003,7 +1102,7 @@ Learn agent architectures:
 - graph-based agents
 - multi-agent systems
 
-Frameworks
+### Frameworks
 
 Understand at least one deeply:
 
@@ -1016,7 +1115,7 @@ And understand how to build a simple agent without a framework.
 
 ---
 
-19. MCP
+## 19. MCP
 
 Learn the Model Context Protocol.
 
@@ -1037,7 +1136,7 @@ The goal is to understand standardized tool/data interfaces for AI systems.
 
 ---
 
-20. Agent Security
+## 20. Agent Security
 
 Agents create a larger attack surface than ordinary APIs.
 
@@ -1057,17 +1156,17 @@ Design tools with explicit permissions.
 
 ---
 
-21. Evaluation Engineering
+## 21. Evaluation Engineering
 
 This is one of the most important AI engineering skills.
 
 A demo answers:
 
-«"Does it work?"»
+> "Does it work?"
 
 An evaluation system answers:
 
-«"Does it continue working after we change something?"»
+> "Does it continue working after we change something?"
 
 Build evals for:
 
@@ -1085,6 +1184,7 @@ Build evals for:
 Evaluation hierarchy
 
 Unit tests
+```text
     ↓
 Component tests
     ↓
@@ -1095,12 +1195,14 @@ System evaluations
 Regression tests
     ↓
 Production monitoring
+```
 
 Build an evaluation harness.
 
 It should support:
 
-Dataset
+**Dataset**
+```text
   ↓
 Run system
   ↓
@@ -1111,23 +1213,24 @@ Score
 Compare versions
   ↓
 Detect regression
+```
 
 ---
 
-22. LLM Observability
+## 22. LLM Observability
 
 You cannot operate what you cannot see.
 
 Track:
 
-Application
+### Application
 
 - request count
 - errors
 - throughput
 - latency
 
-LLM
+### LLM
 
 - input tokens
 - output tokens
@@ -1136,14 +1239,14 @@ LLM
 - cache hits
 - tool calls
 
-RAG
+### RAG
 
 - retrieved documents
 - retrieval scores
 - reranker scores
 - context size
 
-Agents
+### Agents
 
 - steps
 - tool calls
@@ -1151,7 +1254,7 @@ Agents
 - retries
 - execution time
 
-Infrastructure
+### Infrastructure
 
 - CPU
 - RAM
@@ -1170,7 +1273,7 @@ Explore:
 
 ---
 
-23. AI Cost Engineering
+## 23. AI Cost Engineering
 
 Production AI has an economic constraint.
 
@@ -1195,9 +1298,10 @@ Understand:
 - smaller models
 - asynchronous workloads
 
-Example routing strategy
+### Example routing strategy
 
                   Request
+```text
                      │
           ┌──────────▼──────────┐
           │ Complexity classifier│
@@ -1207,12 +1311,13 @@ Example routing strategy
         ▼            ▼            ▼
      Small         Medium        Large
      Model         Model         Model
+```
 
 Do not use the largest model for every request.
 
 ---
 
-24. Model Routing
+## 24. Model Routing
 
 Learn to route requests based on:
 
@@ -1224,29 +1329,32 @@ Learn to route requests based on:
 - reliability
 - domain
 
-Possible architecture:
+### Possible architecture
 
 Request
+```text
   ↓
 Router
   ├── Fast model
   ├── Cheap model
   ├── Specialized model
   └── Reasoning model
+```
 
 Evaluate routing using actual workload data.
 
 ---
 
-25. Fine-Tuning
+## 25. Fine-Tuning
 
 Fine-tuning should not be the default answer to every model problem.
 
 First determine whether the problem is caused by:
 
-Prompt
+**Prompt**
 Context
-Retrieval
+### Retrieval
+
 Tools
 Model capability
 Training data
@@ -1278,7 +1386,7 @@ Hugging Face's current training documentation describes fine-tuning as continuin
 
 ---
 
-26. Preference Optimization
+## 26. Preference Optimization
 
 Learn:
 
@@ -1290,13 +1398,14 @@ Learn:
 
 Understand the difference between:
 
-Supervised learning
+### Supervised learning
+
 Preference optimization
 Reinforcement learning
 
 ---
 
-27. Quantization
+## 27. Quantization
 
 Learn why quantization matters.
 
@@ -1314,16 +1423,18 @@ Understand:
 
 Trade-offs:
 
+```text
 Memory ↓
 Cost ↓
 Latency potentially ↓
 Accuracy potentially ↓
+```
 
 Measure the trade-off.
 
 ---
 
-28. Inference Engineering
+## 28. Inference Engineering
 
 This is a major boundary between "AI app developer" and deeper AI engineering.
 
@@ -1340,7 +1451,7 @@ Understand:
 - memory management
 - scheduling
 
-Key metrics
+### Key metrics
 
 Learn:
 
@@ -1355,13 +1466,14 @@ Learn:
 
 ---
 
-29. Model Serving
+## 29. Model Serving
 
 Learn how models become network services.
 
-Basic architecture
+### Basic architecture
 
 Client
+```text
   ↓
 API Gateway
   ↓
@@ -1371,7 +1483,8 @@ Inference Server
   ↓
 GPU
   ↓
-Model
+**Model**
+```
 
 Explore:
 
@@ -1386,7 +1499,7 @@ vLLM currently supports both offline batched inference and online serving, inclu
 
 ---
 
-30. vLLM
+## 30. vLLM
 
 Learn vLLM beyond:
 
@@ -1405,7 +1518,7 @@ Understand:
 - metrics
 - throughput/latency trade-offs
 
-Project
+### Project
 
 Deploy an open-source LLM with vLLM.
 
@@ -1426,7 +1539,7 @@ Then optimize it.
 
 ---
 
-31. NVIDIA Triton
+## 31. NVIDIA Triton
 
 Learn:
 
@@ -1446,7 +1559,7 @@ It is learning how serving architecture affects inference performance.
 
 ---
 
-32. Distributed Inference
+## 32. Distributed Inference
 
 Learn when one GPU is insufficient.
 
@@ -1468,11 +1581,12 @@ Learn:
 
 ---
 
-33. Distributed Training
+## 33. Distributed Training
 
 Understand:
 
 Single GPU
+```text
    ↓
 Data Parallel
    ↓
@@ -1481,6 +1595,7 @@ Distributed Data Parallel
 FSDP / ZeRO
    ↓
 Multi-node training
+```
 
 Learn:
 
@@ -1494,19 +1609,20 @@ Learn:
 
 ---
 
-34. MLOps
+## 34. MLOps
 
 MLOps connects experiments to production.
 
 Learn:
 
-Data
+**Data**
+```text
  ↓
 Training
  ↓
 Experiment tracking
  ↓
-Evaluation
+**Evaluation**
  ↓
 Model registry
  ↓
@@ -1515,6 +1631,7 @@ Deployment
 Monitoring
  ↓
 Retraining
+```
 
 Learn:
 
@@ -1530,7 +1647,7 @@ Made With ML's production-oriented curriculum explicitly combines design, data, 
 
 ---
 
-35. Docker
+## 35. Docker
 
 Every AI engineer should be comfortable containerizing applications.
 
@@ -1545,7 +1662,7 @@ Learn:
 - Docker Compose
 - GPU containers
 
-Project:
+### Project
 
 FastAPI
 +
@@ -1561,7 +1678,7 @@ Run the entire system using Docker Compose.
 
 ---
 
-36. Kubernetes
+## 36. Kubernetes
 
 Learn enough Kubernetes to deploy and operate AI services.
 
@@ -1589,7 +1706,7 @@ For AI workloads additionally understand:
 
 ---
 
-37. Cloud Infrastructure
+## 37. Cloud Infrastructure
 
 Pick one cloud deeply.
 
@@ -1636,11 +1753,12 @@ Do not collect cloud certificates without deploying anything.
 
 ---
 
-38. CI/CD for AI
+## 38. CI/CD for AI
 
 Build pipelines that automatically:
 
 Commit
+```text
  ↓
 Lint
  ↓
@@ -1657,6 +1775,7 @@ Build Container
 Deploy
  ↓
 Smoke Test
+```
 
 For AI systems add:
 
@@ -1668,10 +1787,11 @@ Cost benchmark
 
 ---
 
-39. Production Architecture
+## 39. Production Architecture
 
 Learn to design systems such as:
 
+```text
                     ┌─────────────┐
                     │    User     │
                     └──────┬──────┘
@@ -1700,20 +1820,25 @@ Learn to design systems such as:
           │
           ▼
      Observability
+```
 
 ---
 
-40. Reliability Engineering
+## 40. Reliability Engineering
 
 AI systems are probabilistic.
 
 Traditional software often behaves like:
 
+```text
 input → deterministic output
+```
 
 AI systems behave more like:
 
+```text
 input → probabilistic output
+```
 
 Therefore learn:
 
@@ -1732,7 +1857,7 @@ Design for model failure.
 
 ---
 
-41. AI Safety and Security
+## 41. AI Safety and Security
 
 Learn:
 
@@ -1762,7 +1887,7 @@ For agents:
 
 ---
 
-42. Multimodal AI
+## 42. Multimodal AI
 
 After mastering language systems, explore:
 
@@ -1795,28 +1920,31 @@ Image
 Text
 Audio
 Video
+```text
    ↓
 Multimodal Encoder
    ↓
 Shared Representation
    ↓
 LLM / Decoder
+```
 
 ---
 
-43. AI Research Literacy
+## 43. AI Research Literacy
 
 An AI engineer should be able to read papers.
 
 Learn how to extract:
 
 Problem
+```text
  ↓
 Hypothesis
  ↓
 Method
  ↓
-Dataset
+**Dataset**
  ↓
 Experiment
  ↓
@@ -1827,6 +1955,7 @@ Ablation
 Result
  ↓
 Limitation
+```
 
 Learn to distinguish:
 
@@ -1848,7 +1977,7 @@ Read papers from:
 
 ---
 
-44. System Design for AI
+## 44. System Design for AI
 
 Practice designing systems under constraints.
 
@@ -1896,13 +2025,14 @@ Consider:
 
 ---
 
-45. Performance Engineering
+## 45. Performance Engineering
 
 Never optimize blindly.
 
 Use:
 
 Measure
+```text
  ↓
 Profile
  ↓
@@ -1913,6 +2043,7 @@ Change one variable
 Benchmark
  ↓
 Compare
+```
 
 Measure:
 
@@ -1939,7 +2070,7 @@ Do not optimize the wrong component.
 
 ---
 
-46. AI Caching
+## 46. AI Caching
 
 Learn multiple levels of caching.
 
@@ -1971,13 +2102,14 @@ Caching is a systems problem, not merely a dictionary.
 
 ---
 
-47. Asynchronous AI Systems
+## 47. Asynchronous AI Systems
 
 Not every AI workload needs synchronous inference.
 
 Learn:
 
 User
+```text
  ↓
 API
  ↓
@@ -1985,9 +2117,10 @@ Queue
  ↓
 Worker
  ↓
-Model
+**Model**
  ↓
 Result
+```
 
 Explore:
 
@@ -2008,17 +2141,17 @@ Use asynchronous processing for:
 
 ---
 
-48. Data and Model Versioning
+## 48. Data and Model Versioning
 
 Version:
 
 Code
-Data
-Model
-Prompt
-Configuration
-Evaluation
-Infrastructure
+**Data**
+**Model**
+**Prompt**
+**Configuration**
+**Evaluation**
+### Infrastructure
 
 A production result should be reproducible.
 
@@ -2033,7 +2166,7 @@ Code: commit abc123
 
 ---
 
-49. AI Product Engineering
+## 49. AI Product Engineering
 
 AI engineering is not only model engineering.
 
@@ -2057,7 +2190,7 @@ Engineering becomes much easier when constraints are explicit.
 
 ---
 
-50. Advanced AI Systems
+## 50. Advanced AI Systems
 
 After mastering the previous layers, explore:
 
@@ -2078,58 +2211,60 @@ After mastering the previous layers, explore:
 
 ---
 
-51. Recommended Tool Stack
+## 51. Recommended Tool Stack
 
 Do not learn every tool.
 
 Learn concepts first.
 
-Core
+### Core
 
-Python
+### Python
+
 Git
 Linux
 Docker
-SQL
+### SQL
+
 PostgreSQL
 FastAPI
 
-ML
+### ML
 
 NumPy
 Pandas / Polars
 Scikit-learn
 PyTorch
 
-LLM
+### LLM
 
 Hugging Face
 Transformers
 Tokenizers
 PEFT
 
-RAG
+### RAG
 
 pgvector
 Qdrant
 BM25
 Rerankers
 
-Agents
+### Agents
 
 LangGraph
 OpenAI Agents SDK
 smolagents
 MCP
 
-Serving
+### Serving
 
 vLLM
 NVIDIA Triton
 TensorRT-LLM
 llama.cpp
 
-MLOps
+### MLOps
 
 MLflow
 Weights & Biases
@@ -2137,7 +2272,7 @@ DVC
 Docker
 GitHub Actions
 
-Observability
+### Observability
 
 OpenTelemetry
 Prometheus
@@ -2145,7 +2280,7 @@ Grafana
 Langfuse
 Arize Phoenix
 
-Cloud
+### Cloud
 
 AWS / GCP / Azure
 Kubernetes
@@ -2153,13 +2288,14 @@ Terraform
 
 ---
 
-52. Projects — Beginner
+## 52. Projects — Beginner
 
 Build small systems first.
 
 Project 1 — ML API
 
-Dataset
+**Dataset**
+```text
  ↓
 Train model
  ↓
@@ -2168,6 +2304,7 @@ FastAPI
 Docker
  ↓
 Cloud deployment
+```
 
 Project 2 — Image classifier
 
@@ -2190,7 +2327,7 @@ Build:
 
 ---
 
-53. Projects — Intermediate
+## 53. Projects — Intermediate
 
 Project 4 — Production RAG
 
@@ -2232,16 +2369,18 @@ Project 6 — Fine-Tuned Model
 Build:
 
 Base model
+```text
  ↓
-Dataset
+**Dataset**
  ↓
 LoRA / QLoRA
  ↓
-Evaluation
+**Evaluation**
  ↓
 Quantization
  ↓
 Deployment
+```
 
 Report:
 
@@ -2254,7 +2393,7 @@ Report:
 
 ---
 
-54. Projects — Advanced
+## 54. Projects — Advanced
 
 Project 7 — LLM Inference Benchmark
 
@@ -2280,11 +2419,12 @@ Produce a technical report.
 
 ---
 
-55. Project 8 — Model Router
+## 55. Project 8 — Model Router
 
 Build:
 
                  Request
+```text
                     │
                     ▼
                  Router
@@ -2292,6 +2432,7 @@ Build:
             /       |       \
        Cheap      Fast     Strong
        Model      Model     Model
+```
 
 Route based on:
 
@@ -2309,12 +2450,12 @@ Router
 
 ---
 
-56. Project 9 — AI Evaluation Platform
+## 56. Project 9 — AI Evaluation Platform
 
 Build a system where developers can submit:
 
-Prompt
-Model
+**Prompt**
+**Model**
 RAG configuration
 Agent configuration
 
@@ -2324,20 +2465,21 @@ Accuracy
 Faithfulness
 Latency
 Tokens
-Cost
+**Cost**
 Failure rate
 
 Include regression detection.
 
 ---
 
-57. Project 10 — Production AI Platform
+## 57. Project 10 — Production AI Platform
 
 The capstone.
 
 Build:
 
 Frontend
+```text
    ↓
 API Gateway
    ↓
@@ -2356,6 +2498,7 @@ RAG          Agent          Direct LLM
              vLLM
                ↓
               GPU
+```
 
 Add:
 
@@ -2373,16 +2516,17 @@ Add:
 
 ---
 
-58. The Portfolio Standard
+## 58. The Portfolio Standard
 
 Avoid:
 
-"Built a chatbot using LangChain."
+> "Built a chatbot using LangChain."
 
 Prefer:
 
 Built a production RAG service over 2M documents.
 
+```text
 Reduced p95 latency from 4.2s → 1.7s
 Reduced retrieval errors by 31%
 Implemented hybrid BM25 + dense retrieval
@@ -2390,37 +2534,39 @@ Added reranking
 Built 1,500-case evaluation suite
 Deployed with Docker + Kubernetes
 Added OpenTelemetry tracing
+```
 
 The second demonstrates engineering.
 
 ---
 
-59. AI Engineer Competency Matrix
+## 59. AI Engineer Competency Matrix
 
-Area| Beginner| Intermediate| Advanced
-Python| Scripts| Production APIs| Large systems
-ML| Models| Pipelines| Research/optimization
-PyTorch| Training| Custom architectures| Performance/distributed
-LLMs| API usage| Applications| Model internals
-RAG| Basic vector search| Hybrid + reranking| Retrieval research
-Agents| Tool calling| Stateful agents| Reliable agent systems
-Evaluation| Manual| Automated evals| Regression platform
-Deployment| Docker| Cloud| Kubernetes/GPU infra
-Inference| API calls| Serving| Optimization
-vLLM| Basic serving| Benchmarking| Production tuning
-GPUs| Usage| Profiling| Kernel/runtime optimization
-MLOps| Tracking| CI/CD| Full lifecycle
-Security| Basics| AI threats| Secure AI infrastructure
-Systems| APIs| Distributed services| AI infrastructure
-Cost| Awareness| Optimization| Architecture-level economics
+| Area | Beginner | Intermediate | Advanced |
+| --- | --- | --- | --- |
+| Python | Scripts | Production APIs | Large systems |
+| ML | Models | Pipelines | Research / optimization |
+| PyTorch | Training | Custom architectures | Performance / distributed |
+| LLMs | API usage | Applications | Model internals |
+| RAG | Basic vector search | Hybrid + reranking | Retrieval research |
+| Agents | Tool calling | Stateful agents | Reliable agent systems |
+| Evaluation | Manual | Automated evals | Regression platform |
+| Deployment | Docker | Cloud | Kubernetes / GPU infrastructure |
+| Inference | API calls | Serving | Optimization |
+| vLLM | Basic serving | Benchmarking | Production tuning |
+| GPUs | Usage | Profiling | Kernel / runtime optimization |
+| MLOps | Tracking | CI/CD | Full lifecycle |
+| Security | Basics | AI threats | Secure AI infrastructure |
+| Systems | APIs | Distributed services | AI infrastructure |
+| Cost | Awareness | Optimization | Architecture-level economics |
 
 ---
 
-60. Self-Assessment Checklist
+## 60. Self-Assessment Checklist
 
 You should be able to answer yes to these before calling yourself production-ready.
 
-Software
+**Software**
 
 - [ ] I can write production-quality Python.
 - [ ] I understand async programming.
@@ -2431,7 +2577,7 @@ Software
 - [ ] I can write tests.
 - [ ] I can containerize an application.
 
-ML
+### ML
 
 - [ ] I understand classical ML.
 - [ ] I understand neural networks.
@@ -2453,7 +2599,7 @@ LLMs
 - [ ] I understand fine-tuning.
 - [ ] I understand quantization.
 
-RAG
+### RAG
 
 - [ ] I can design an ingestion pipeline.
 - [ ] I understand chunking trade-offs.
@@ -2463,7 +2609,7 @@ RAG
 - [ ] I can evaluate retrieval quality.
 - [ ] I can debug bad retrieval.
 
-Agents
+### Agents
 
 - [ ] I understand tool calling.
 - [ ] I can build an agent without a framework.
@@ -2473,7 +2619,7 @@ Agents
 - [ ] I understand agent security.
 - [ ] I can evaluate agent behavior.
 
-Production
+**Production**
 
 - [ ] I can deploy an AI API.
 - [ ] I can use Docker.
@@ -2499,13 +2645,14 @@ Inference
 
 ---
 
-61. The Learning Order
+## 61. The Learning Order
 
 Do not attempt to learn everything simultaneously.
 
 Recommended order:
 
 1. Python
+```text
       ↓
 2. Computer Science
       ↓
@@ -2544,12 +2691,13 @@ Recommended order:
 19. Distributed Systems
       ↓
 20. Advanced AI Infrastructure
+```
 
 The later stages should increasingly become project-driven rather than course-driven.
 
 ---
 
-62. The 70/20/10 Rule
+## 62. The 70/20/10 Rule
 
 A useful learning allocation:
 
@@ -2577,7 +2725,7 @@ Repeat.
 
 ---
 
-63. What NOT To Do
+## 63. What NOT To Do
 
 Avoid building your entire identity around:
 
@@ -2598,39 +2746,40 @@ Technology should follow the problem.
 
 ---
 
-64. The Depth Test
+## 64. The Depth Test
 
 A useful test for every technology:
 
 Level 1 — User
 
-«I can use it.»
+> "I can use it."
 
 Level 2 — Builder
 
-«I can build with it.»
+> "I can build with it."
 
 Level 3 — Debugger
 
-«I can diagnose when it fails.»
+> "I can diagnose when it fails."
 
 Level 4 — Optimizer
 
-«I can make it faster, cheaper or more reliable.»
+> "I can make it faster, cheaper or more reliable."
 
 Level 5 — Engineer
 
-«I understand the trade-offs well enough to decide whether I should use it at all.»
+> "I understand the trade-offs well enough to decide whether I should use it at all."
 
 Aim for Level 4–5 on your core stack.
 
 ---
 
-65. The AI Engineer Stack
+## 65. The AI Engineer Stack
 
 A mature AI Engineer should eventually be comfortable moving across this entire stack:
 
                     PRODUCT
+```text
                        │
                 ┌──────▼──────┐
                 │ AI Workflows│
@@ -2667,30 +2816,32 @@ A mature AI Engineer should eventually be comfortable moving across this entire 
           ┌────────────▼────────────┐
           │ Software Engineering   │
           └─────────────────────────┘
+```
 
 ---
 
-66. Final Definition
+## 66. Final Definition
 
 You do not become an AI Engineer because you know:
 
-«RAG + Agents + LLMs + LangChain.»
+> "RAG + Agents + LLMs + LangChain."
 
 You become an AI Engineer when you can take:
 
 A vague problem
+```text
       ↓
 Requirements
       ↓
 Architecture
       ↓
-Data
+**Data**
       ↓
-Model
+**Model**
       ↓
 Application
       ↓
-Evaluation
+**Evaluation**
       ↓
 Deployment
       ↓
@@ -2699,40 +2850,41 @@ Monitoring
 Optimization
       ↓
 Scale
+```
 
 and make the system actually work.
 
 A strong AI Engineer can answer:
 
-«What should we build?»
+> "What should we build?"
 
-«Why this model?»
+> "Why this model?"
 
-«Why this architecture?»
+> "Why this architecture?"
 
-«How do we know it works?»
+> "How do we know it works?"
 
-«What happens when it fails?»
+> "What happens when it fails?"
 
-«How fast is it?»
+> "How fast is it?"
 
-«How much does it cost?»
+> "How much does it cost?"
 
-«How does it behave at 10× traffic?»
+> "How does it behave at 10× traffic?"
 
-«How do we monitor it?»
+> "How do we monitor it?"
 
-«How do we improve it?»
+> "How do we improve it?"
 
 That is the standard this roadmap is designed to build toward.
 
 ---
 
-Research Basis
+### Research Basis
 
 This roadmap was synthesized from current AI/ML engineering roadmaps and primary technical learning/documentation sources rather than from a single roadmap.
 
-Roadmaps
+### Roadmaps
 
 - "roadmap.sh — AI & Data Scientist Roadmap" (https://roadmap.sh/ai-data-scientist)
 - "roadmap.sh — Developer Roadmaps" (https://roadmap.sh/get-started)
@@ -2740,13 +2892,13 @@ Roadmaps
 - "AI Engineer Roadmap 2026 — atryx" (https://github.com/atryx/ai-engineer-roadmap-2026)
 - "Learning-Atlas — AI/ML Roadmap" (https://github.com/shamiquekhan/Learning-Atlas/blob/main/RoadMaps/AI-ML-Roadmap-Zero-to-Engineer.md)
 
-Production ML / MLOps
+### Production ML / MLOps
 
 - Made With ML — MLOps
 - Full Stack Deep Learning
 - MLflow documentation
 
-LLMs / Agents
+### LLMs / Agents
 
 - Hugging Face Transformers
 - Hugging Face LLM Course
@@ -2754,7 +2906,7 @@ LLMs / Agents
 - Hugging Face MCP Course
 - OpenAI developer documentation and cookbook
 
-Inference / Systems
+### Inference / Systems
 
 - vLLM documentation
 - NVIDIA Triton Inference Server
@@ -2763,24 +2915,24 @@ Inference / Systems
 
 ---
 
-Relationship to the Existing Learning-Atlas Roadmap
+### Relationship to the Existing Learning-Atlas Roadmap
 
 The existing:
 
-"AI-ML-Roadmap-Zero-to-Engineer.md"
+> "AI-ML-Roadmap-Zero-to-Engineer.md"
 
 should remain the foundational AI/ML learning path.
 
 This roadmap is intentionally more engineering- and production-oriented.
 
 AI-ML-Roadmap
+```text
      │
      │ foundations
      ▼
 ML / DL / NLP / GenAI
      │
      ▼
-AI Engineer Roadmap
      │
      ├── Production systems
      ├── RAG
@@ -2791,7 +2943,10 @@ AI Engineer Roadmap
      ├── GPU systems
      ├── Optimization
      └── AI infrastructure
+```
 
 Together they form a broader path:
 
+```text
 Learn the models → build the systems → measure them → deploy them → operate them → optimize them.
+```
